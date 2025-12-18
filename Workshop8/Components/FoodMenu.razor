@@ -1,0 +1,27 @@
+﻿<h3>Food Menu</h3>
+
+<div class="d-flex flex-wrap">
+    @foreach (var item in foodItems)
+    {
+        <ItemCard 
+            Name="@item.Name"
+            Ingredients="@item.Ingredients"
+            Price="@item.Price" />
+    }
+</div>
+
+@code {
+    List<FoodItem> foodItems = new()
+    {
+        new FoodItem { Name="Pizza", Ingredients="Cheese, Flour", Price=500 },
+        new FoodItem { Name="Burger", Ingredients="Bun, Patty", Price=300 },
+        new FoodItem { Name="Pasta", Ingredients="Sauce, Noodles", Price=400 }
+    };
+
+    class FoodItem
+    {
+        public string Name { get; set; }
+        public string Ingredients { get; set; }
+        public decimal Price { get; set; }
+    }
+}

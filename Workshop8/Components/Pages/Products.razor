@@ -1,0 +1,23 @@
+﻿@page "/products"
+@layout ProductLayout
+@using Workshop8.Models
+
+<h3>Products</h3>
+
+<div class="d-flex flex-wrap">
+    @foreach (var item in products)
+    {
+        <ProductCard Product="item" />
+    }
+</div>
+
+@code {
+    List<Product> products = new()
+    {
+        new Product { Name="Laptop", Price=90000, Likes=12 },
+        new Product { Name="Mobile", Price=60000, Likes=25 },
+        new Product { Name="Headphones", Price=8000, Likes=15 },
+        new Product { Name="Camera", Price=75000, Likes=10 },
+        new Product { Name="Smart Watch", Price=12000, Likes=18 }
+    };
+}
